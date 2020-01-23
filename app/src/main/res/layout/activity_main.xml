@@ -4,15 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+    <br.com.vargas.customcomponents.components.TextWithIconTextView
+        android:id="@+id/text_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:iconError="@drawable/ic_error_color_error"
+        app:iconRunning="@drawable/ic_loop_black"
+        app:iconSuccess="@drawable/ic_success_color_success"
+        app:iconWaiting="@drawable/ic_waiting_color_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:status="success"
+        app:text="Component with icon"
+        tools:ignore="HardcodedText" />
+
+    <br.com.vargas.customcomponents.components.TextWithIconTextView
+        android:id="@+id/text_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="20dp"
+        app:iconError="@drawable/ic_error_color_error"
+        app:iconRunning="@drawable/ic_loop_black"
+        app:iconSuccess="@drawable/ic_success_color_success"
+        app:iconWaiting="@drawable/ic_waiting_color_bar"
+        app:layout_constraintStart_toStartOf="@id/text_1"
+        app:layout_constraintTop_toBottomOf="@id/text_1"
+        app:status="error"
+        app:text="Sei lá"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
