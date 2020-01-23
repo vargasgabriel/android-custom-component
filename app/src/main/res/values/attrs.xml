@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="TextWithIconTextView">
+    <declare-styleable name="TextView">
         <attr name="text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="TextWithIconTextView" parent="TextView">
+        <attr name="text"/>
         <attr name="iconWaiting" format="reference" />
         <attr name="iconRunning" format="reference" />
         <attr name="iconSuccess" format="reference" />
@@ -12,5 +16,12 @@
             <enum name="success" value="2"/>
             <enum name="error" value="3"/>
         </attr>
+    </declare-styleable>
+
+    <declare-styleable name="TextAndSubtextTextView" parent="TextView">
+        <attr name="text"/>
+        <attr name="textColor" format="color" />
+        <attr name="subtext" format="string" />
+        <attr name="subtextColor" format="color" />
     </declare-styleable>
 </resources>

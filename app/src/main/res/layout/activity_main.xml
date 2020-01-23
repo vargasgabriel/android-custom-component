@@ -36,4 +36,27 @@
         app:text="Sei lá"
         tools:ignore="HardcodedText" />
 
+    <br.com.vargas.customcomponents.components.TextAndSubtextTextView
+        android:id="@+id/text_and_subtext_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/text_1"
+        app:layout_constraintTop_toBottomOf="@id/text_2"
+        app:subtext="seleciona aqui"
+        app:subtextColor="@color/colorAccent"
+        app:text="Foobar" />
+
+    <br.com.vargas.customcomponents.components.TextAndSubtextTextView
+        android:id="@+id/text_and_subtext_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:textColor="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="@id/text_1"
+        app:layout_constraintTop_toBottomOf="@id/text_and_subtext_1"
+        app:subtext="click here"
+        app:subtextColor="@color/colorPrimaryDark"
+        app:text="Configuration" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
