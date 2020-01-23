@@ -2,17 +2,13 @@ package br.com.vargas.customcomponents.components;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import androidx.appcompat.widget.AppCompatTextView;
 
 import br.com.vargas.customcomponents.R;
 
@@ -29,6 +25,8 @@ public class TextWithIconTextView extends LinearLayout  {
     public static final int RUNNING = 1;
     public static final int SUCCESS = 2;
     public static final int ERROR = 3;
+    private String text;
+    private TextView titleTextView;
 
     public TextWithIconTextView(Context context) {
         super(context);
@@ -46,7 +44,7 @@ public class TextWithIconTextView extends LinearLayout  {
 
     private void init(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TextWithIconTextView, 0, 0);
-        String text = a.getString(R.styleable.TextWithIconTextView_text);
+        text = a.getString(R.styleable.TextWithIconTextView_text);
         iconError = a.getDrawable(R.styleable.TextWithIconTextView_iconError);
         iconRunning = a.getDrawable(R.styleable.TextWithIconTextView_iconRunning);
         iconSuccess = a.getDrawable(R.styleable.TextWithIconTextView_iconSuccess);
@@ -63,8 +61,8 @@ public class TextWithIconTextView extends LinearLayout  {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.text_with_icon_component, this, true);
 
-        TextView title = (TextView) getChildAt(0);
-        title.setText(text);
+        titleTextView = (TextView) getChildAt(0);
+        titleTextView.setText(text);
 
         icon = (ImageView) getChildAt(1);
         setIconStatus();
@@ -90,12 +88,23 @@ public class TextWithIconTextView extends LinearLayout  {
         }
     }
 
-    public void setStatus(int newStatus) {
-        this.status = newStatus;
-        setIconStatus();
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String newText) {
+        this.text = newText;
+        titleTextView.setText(newText);
     }
 
     public int getStatus() {
         return this.status;
     }
+
+    public void setStatus(int newStatus) {
+        this.status = newStatus;
+        setIconStatus();
+    }
+
+
 }
